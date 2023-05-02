@@ -13,9 +13,9 @@ let nueva = document.createElement("div");
 nueva.innerHTML = `
 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5 card">
     <figure class="effect-ming tm-video-item">
-        <img src=img/${i}.jpg alt="Image" class="img-fluid">
+        <img src=./templatemo_556_catalog_z/img/${i}.jpg alt="Image" class="img-fluid">
         <figcaption class="d-flex align-items-center justify-content-center">
-            <h2>Clocks</h2>
+            <h2>Comprar</h2>
             <a href="photo-detail.html">View more</a>
         </figcaption>
     </figure>
