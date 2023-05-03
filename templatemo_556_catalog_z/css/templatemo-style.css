@@ -6,6 +6,15 @@ https://templatemo.com/tm-556-catalog-z
 
 */
 
+
+#hh #hh2{
+    background-color: #009999;
+    color: #009999;
+    width: 100%;
+    height: 100%;
+    
+}
+
 #loader-wrapper {
     position: fixed;
     top: 0;
