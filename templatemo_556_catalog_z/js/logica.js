@@ -16,43 +16,27 @@ for (let i = 100; i < 120; i++) {
 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5 card">
     <figure class="effect-ming tm-video-item">
         <img src=./templatemo_556_catalog_z/img/${i}.jpg alt="Image" class="img-fluid">
-        <figcaption class="d-flex align-items-center justify-content-center">
-            <h2>Comprar</h2>
-            <a href="photo-detail.html">View more</a>
-        </figcaption>
     </figure>
     <div class="d-inline-block">
-        <span class="tm-text-gray">${data[i].Producto}</span>
-        <h6 class="text-black">Caja Completa: ${data[i].siete}
-            <a target="_blank" class="imagen"
-                href="https://api.whatsapp.com/send?phone=18092425374&text= Prefacturar:${data[i].Producto} *caja completa* por => ${data[i].siete} Cantidad || Cliente. "
-                class="precio">
-                <span target="_blank" class="coco">
-                    Pref.
-                </span>
-            </a>
-        </h6>
+        <h4 class="tm-text">${data[i].Producto}</h4>
+        <span id="CantidadCajaCompleta${i}"></span><span class="text-black"> Caja Completa por: <b>${data[i].siete}</b><span>c/u</span>
+
+        </span>
         <button type="button" id="sumacajacompleta">Agregar</button> <button type="button"
-            id="restacajacompleta">Restar</button>
+            id="restacajacompleta">Quitar</button>
         <div id="cajaCompletaXCantidad${i}"></div>
-        <div id="CantidadCajaCompleta${i}"></div>
-        <h6 class="text-black">Media Caja: ${data[i].nueve}
-            <a target="_blank" class="imagen"
-                href="https://api.whatsapp.com/send?phone=18092425374&text= Prefacturar:${data[i].Producto} *media caja* por => ${data[i].nueve} Cantidad || Cliente. "
-                class="precio">
-                <span target="_blank" class="coco">
-                    Pref.
-                </span>
-            </a>
-        </h6>
+        </br>
+        <span id="cantidadMediaCaja${i}"></span><span class="text-black"> Media Caja por: <b>${data[i].nueve}</b><span>c/u</span>
+
+        </span>
         <button type="button" id="sumamediacaja">Agregar</button> <button type="button"
-            id="restamediacaja">Restar</button>
+            id="restamediacaja">Quitar</button>
         <div id="mediacajaXcantidad${i}"></div>
-        <div id="cantidadMediaCaja${i}"></div>
+        
     </div>
-    <span id="cajaCompletaXCantidadT">Total A Prefacturar</span>
+      </br><h5 id="cajaCompletaXCantidadT">Total A Prefacturar Via WhatsApp</h5>
     <h4 id="totalCajas${i}"></h4>
-    <button type="button" id="prefacturar">Prefacturar</button> 
+    <button type="button" id="prefacturar">Enviar Prefactura</button> 
 </div>
 `
         ;
@@ -131,7 +115,7 @@ const totalmediacajaXcantidad = document.getElementById(`mediacajaXcantidad${i}`
 const totalcantidadMediaCaja = document.getElementById(`cantidadMediaCaja${i}`).innerHTML;
 const totaltotalCajas = document.getElementById(`totalCajas${i}`).innerHTML;
 // 18092425374
-let url = `https://api.whatsapp.com/send?phone=18493802222&text= 
+let url = `https://api.whatsapp.com/send?phone=18092425374&text= 
 ${data[i].Producto}           
                                                                                                             
  *${totalCantidadCajaCompleta} cajas*   y    *${totalcantidadMediaCaja} media cajas*                                                                                                                                        
