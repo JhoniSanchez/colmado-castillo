@@ -3,7 +3,7 @@ import { data } from "./js.js";
 
 
 
-for (let i = 115; i < 120; i++) {
+for (let i = 100; i < 120; i++) {
 
 
 
@@ -34,8 +34,8 @@ for (let i = 115; i < 120; i++) {
         </h6>
         <button type="button" id="sumacajacompleta">Agregar</button> <button type="button"
             id="restacajacompleta">Restar</button>
-        <div id="cajaCompletaXCantidad"></div>
-        <div id="CantidadCajaCompleta"></div>
+        <div id="cajaCompletaXCantidad${i}"></div>
+        <div id="CantidadCajaCompleta${i}"></div>
         <h6 class="text-black">Media Caja: ${data[i].nueve}
             <a target="_blank" class="imagen"
                 href="https://api.whatsapp.com/send?phone=18092425374&text= Prefacturar:${data[i].Producto} *media caja* por => ${data[i].nueve} Cantidad || Cliente. "
@@ -47,11 +47,11 @@ for (let i = 115; i < 120; i++) {
         </h6>
         <button type="button" id="sumamediacaja">Agregar</button> <button type="button"
             id="restamediacaja">Restar</button>
-        <div id="mediacajaXcantidad"></div>
-        <div id="cantidadMediaCaja"></div>
+        <div id="mediacajaXcantidad${i}"></div>
+        <div id="cantidadMediaCaja${i}"></div>
     </div>
     <span id="cajaCompletaXCantidadT">Total A Prefacturar</span>
-    <h4 id="totalCajas"></h4>
+    <h4 id="totalCajas${i}"></h4>
     <button type="button" id="prefacturar">Prefacturar</button> 
 </div>
 `
@@ -74,13 +74,13 @@ for (let i = 115; i < 120; i++) {
     let sumaMediaCaja = document.querySelector('#sumamediacaja');
     let restaMediaCaja = document.querySelector('#restamediacaja');
 
-    let cajaCompletaXCantidad = document.querySelector('#cajaCompletaXCantidad');
-    let CantidadCajaCompleta = document.querySelector('#CantidadCajaCompleta');
+    let cajaCompletaXCantidad = document.querySelector(`#cajaCompletaXCantidad${i}`);
+    let CantidadCajaCompleta = document.querySelector(`#CantidadCajaCompleta${i}`);
 
-    let mediacajaXcantidad = document.querySelector('#mediacajaXcantidad');
-    let cantidadMediaCaja = document.querySelector('#cantidadMediaCaja');
+    let mediacajaXcantidad = document.querySelector(`#mediacajaXcantidad${i}`);
+    let cantidadMediaCaja = document.querySelector(`#cantidadMediaCaja${i}`);
 
-    let totalCajas = document.querySelector('#totalCajas');
+    let totalCajas = document.querySelector(`#totalCajas${i}`);
 
     let counterUna = 0;
     let counterMedia = 0;
@@ -125,11 +125,11 @@ prefacturar.addEventListener("click", e => {
 // const contents = document.getElementById(taskId);
 
 
-const totalcajaCompletaXCantidad = document.getElementById("cajaCompletaXCantidad").innerHTML || 0;
-const totalCantidadCajaCompleta = document.getElementById("CantidadCajaCompleta").innerHTML || 0;
-const totalmediacajaXcantidad = document.getElementById("mediacajaXcantidad").innerHTML || 0;
-const totalcantidadMediaCaja = document.getElementById("cantidadMediaCaja").innerHTML || 0;
-const totaltotalCajas = document.getElementById("totalCajas").innerHTML || 0;
+const totalcajaCompletaXCantidad = document.getElementById(`cajaCompletaXCantidad${i}`).innerHTML;
+const totalCantidadCajaCompleta = document.getElementById(`CantidadCajaCompleta${i}`).innerHTML;
+const totalmediacajaXcantidad = document.getElementById(`mediacajaXcantidad${i}`).innerHTML;
+const totalcantidadMediaCaja = document.getElementById(`cantidadMediaCaja${i}`).innerHTML;
+const totaltotalCajas = document.getElementById(`totalCajas${i}`).innerHTML;
 // 18092425374
 let url = `https://api.whatsapp.com/send?phone=18493802222&text= 
 ${data[i].Producto}           
