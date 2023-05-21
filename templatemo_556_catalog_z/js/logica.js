@@ -15,8 +15,7 @@ for (let i = 1; data.length; i++) {
 
     <div class=" col-sm-24 col-24 mb-5 card">
     <figure class="lllll">
-        <img src=./templatemo_556_catalog_z/img/${data[i].imagen}.jpeg alt="Image" class="img-fluid" >
-        <img src=./templatemo_556_catalog_z/img/${data[i].imagen}.png alt="Image" class="img-fluid" >
+
         <img src=./templatemo_556_catalog_z/img/${data[i].imagen}.jpg alt="Image" class="img-fluid" >
 
 <div id="precios">
