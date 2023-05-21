@@ -15,16 +15,16 @@ for (let i = 1; data.length; i++) {
 
     <div class=" col-sm-24 col-24 mb-5 card">
     <figure class="lllll">
-        <img src=./templatemo_556_catalog_z/img/${i}.jpeg alt="Image" class="img-fluid" >
-        <img src=./templatemo_556_catalog_z/img/${i}.png alt="Image" class="img-fluid" >
-        <img src=./templatemo_556_catalog_z/img/${i}.jpg alt="Image" class="img-fluid" >
+        <img src=./templatemo_556_catalog_z/img/${data[i].imagen}.jpeg alt="Image" class="img-fluid" >
+        <img src=./templatemo_556_catalog_z/img/${data[i].imagen}.png alt="Image" class="img-fluid" >
+        <img src=./templatemo_556_catalog_z/img/${data[i].imagen}.jpg alt="Image" class="img-fluid" >
 
 <div id="precios">
     <h6><span class="text-black"> Caja Completa por:
-            <b>${formateador.format(data[i].siete.toFixed(2))}</b><span>c/u</span></p></h6>
+            <b>${formateador.format(data[i].caja.toFixed(2))}</b><span>c/u</span></p></h6>
             
             <h6><span class="text-black"> Media Caja por:
-                    <b>${formateador.format(data[i].nueve.toFixed(2))}</b><span>c/u</span></p></h6>
+                    <b>${formateador.format(data[i].mediacaja.toFixed(2))}</b><span>c/u</span></p></h6>
                     
                     <h6> </span><span class="text-black"> Unidad por:
                             <b>${formateador.format(data[i].unidad.toFixed(2))}</b><span>c/u</span></p></h6>
@@ -35,7 +35,7 @@ for (let i = 1; data.length; i++) {
       <div class="d-inline-block">
                                 <h4 class="tm-text mt-2">${data[i].Producto}</h4>
                                 <b id="CantidadCajaCompleta${i}"></b><span class="text-black"> Caja Completa X 
-                                    <b>${formateador.format(data[i].siete.toFixed(2))}</b><span>c/u</span>
+                                    <b>${formateador.format(data[i].caja.toFixed(2))}</b><span>c/u</span>
 
                                 </span>
                                 <button type="button" id="sumacajacompleta">Agregar</button> <button type="button"
@@ -45,7 +45,7 @@ for (let i = 1; data.length; i++) {
 
                                 </br>
                                 <b id="cantidadMediaCaja${i}"></b><span class="text-black"> Media Caja X 
-                                    <b>${formateador.format(data[i].nueve.toFixed(2))}</b><span>c/u</span>
+                                    <b>${formateador.format(data[i].mediacaja.toFixed(2))}</b><span>c/u</span>
 
                                 </span>
                                 <button type="button" id="sumamediacaja">Agregar</button> <button type="button"
@@ -115,14 +115,14 @@ for (let i = 1; data.length; i++) {
 
     function sumaunacaja() {
         counterUna++;
-        resultadoUna = Number.parseFloat(data[i].siete) * counterUna
+        resultadoUna = Number.parseFloat(data[i].caja) * counterUna
         cajaCompletaXCantidad.innerHTML = formateador.format(resultadoUna.toFixed(2));
         CantidadCajaCompleta.innerHTML = formateador.format(counterUna.toFixed(2));
         totalCajas.innerHTML = formateador.format((resultadounidad+resultadoMedia + resultadoUna));
     }
     function restaunacaja() {
         counterUna--;
-        resultadoUna = Number.parseFloat(data[i].siete) * counterUna
+        resultadoUna = Number.parseFloat(data[i].caja) * counterUna
         cajaCompletaXCantidad.innerHTML = formateador.format(resultadoUna.toFixed(2));
         CantidadCajaCompleta.innerHTML = formateador.format(counterUna.toFixed(2));
         totalCajas.innerHTML = formateador.format((resultadounidad+resultadoMedia + resultadoUna));
@@ -130,14 +130,14 @@ for (let i = 1; data.length; i++) {
     function sumaumediacaja() {
         counterMedia++;
 
-        resultadoMedia = Number.parseFloat(data[i].nueve) * counterMedia
+        resultadoMedia = Number.parseFloat(data[i].mediacaja) * counterMedia
         mediacajaXcantidad.innerHTML = formateador.format(resultadoMedia.toFixed(2));
         cantidadMediaCaja.innerHTML = formateador.format(counterMedia.toFixed(2));
         totalCajas.innerHTML = formateador.format((resultadounidad+resultadoMedia + resultadoUna));
     }
     function restamediacaja() {
         counterMedia--;
-        resultadoMedia = Number.parseFloat(data[i].nueve) * counterMedia
+        resultadoMedia = Number.parseFloat(data[i].mediacaja) * counterMedia
         mediacajaXcantidad.innerHTML = formateador.format(resultadoMedia.toFixed(2));
         cantidadMediaCaja.innerHTML = formateador.format(counterMedia.toFixed(2));
         totalCajas.innerHTML = formateador.format((resultadounidad+resultadoMedia + resultadoUna));
@@ -187,9 +187,9 @@ let url = `https://api.whatsapp.com/send?phone=18092425374&text=
 ${data[i].Producto}           
                                                                                                             
  *${totalCantidadCajaCompleta} cajas*   ,    *${totalcantidadMediaCaja} media cajas*     y  *${totalcantidadunidad} unidad*                                                                                                                                  
-${totalCantidadCajaCompleta} cajas X ${data[i].siete} = ${totalcajaCompletaXCantidad}                        
+${totalCantidadCajaCompleta} cajas X ${data[i].caja} = ${totalcajaCompletaXCantidad}                        
                                                                                                                 
-${totalcantidadMediaCaja} media cajas X ${data[i].nueve} 
+${totalcantidadMediaCaja} media cajas X ${data[i].mediacaja} 
 ${totalunidadXcantidad} media cajas X ${data[i].unidad} 
 =  ${totalmediacajaXcantidad}   
 .        total a prefacturar: *${totaltotalCajas}*      *****     al cliente:`
